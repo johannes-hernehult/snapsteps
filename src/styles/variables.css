@@ -1,0 +1,51 @@
+/* Icy North Tailwind-Style Variables (7-Step Scale) - Deepened for Slate-300 BG */
+
+:root {
+    color-scheme: light;
+
+    /* Frozen Primary: Glacial Cyan (Darker shades for contrast) */
+    --ice-50: #e0f2fe;
+    --ice-100: #bae6fd;
+    --ice-200: #7dd3fc;
+    --ice-300: #38bdf8;
+    --ice-400: #0ea5e9;
+    --ice-500: #0284c7;
+    --ice-600: #075985;
+
+    /* Neutrals: Shifted for mid-tone background (Slate-300 base) */
+    --slate-50: #cbd5e1; /* Base Background */
+    --slate-100: #94a3b8;
+    --slate-200: #64748b;
+    --slate-300: #475569;
+    --slate-400: #334155;
+    --slate-500: #1e293b;
+    --slate-600: #0f172a;
+
+    /* Semantic Mapping */
+    --bg-app: var(--slate-50);
+    --text-main: var(--slate-600);
+    --text-dim: var(--slate-400);
+    --border-ui: var(--slate-100);
+    --primary: var(--ice-500);
+}
+
+/* Usage Utility Examples */
+body {
+    background-color: var(--bg-app);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--border-ui);
+}
