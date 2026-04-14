@@ -45,3 +45,8 @@ export const guideSchema = z.object({
   version: z.number().int().positive().default(1),
   isDeleted: z.boolean().default(false),
 });
+
+export type Guide = z.infer<typeof guideSchema>;
+export type Snapshot = z.infer<typeof snapshotSchema>;
+export type File = z.infer<typeof fileSchema>;
+export type Step = z.infer<typeof stepSchema>;
