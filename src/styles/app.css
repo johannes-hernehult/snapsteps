@@ -1,0 +1,39 @@
+body {
+    color: var(--text-main);
+    background-color: var(--bg-app);
+    font-size: var(--size-md);
+    padding: var(--size-md);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--text-heading);
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 0.25em 0;
+}
+
+h1 {
+    font-size: var(--size-2xl);
+}
+
+h2 {
+    font-size: var(--size-xl);
+}
+
+h3 {
+    font-size: var(--size-lg);
+}
+
+h4 {
+    font-size: var(--size-md);
+}
+
+p {
+    max-width: var(--width-md);
+    margin: var(--size-md) 0;
+}
