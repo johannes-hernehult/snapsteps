@@ -1,39 +1,43 @@
-/* Icy North Tailwind-Style Variables (7-Step Scale) - Deepened for Slate-300 BG */
+/* Icy North Tailwind-Style Variables (7-Step Scale) - Deepened for ice-300 BG */
 
 :root {
     color-scheme: light;
 
-    /* Frozen Primary: Glacial Cyan (Darker shades for contrast) */
-    --ice-50: #e0f2fe;
-    --ice-100: #bae6fd;
-    --ice-200: #7dd3fc;
-    --ice-300: #38bdf8;
-    --ice-400: #0ea5e9;
-    --ice-500: #0284c7;
-    --ice-600: #075985;
+    /* Ice Primary: Glacial Cyan (Darker shades for contrast) */
+    --ice-50: oklch(97.7% 0.013 236.62);
+    --ice-100: oklch(90.1% 0.058 230.902);
+    --ice-200: oklch(74.6% 0.16 232.661);
+    --ice-300: oklch(58.8% 0.158 241.966);
+    --ice-400: oklch(44.3% 0.11 240.79);
+    --ice-500: oklch(29.3% 0.066 243.157);
 
-    /* Neutrals: Shifted for mid-tone background (Slate-300 base) */
-    --slate-50: #cbd5e1;
-    --slate-100: #94a3b8;
-    --slate-200: #64748b;
-    --slate-300: #475569;
-    --slate-400: #334155;
-    --slate-500: #1e293b;
-    --slate-600: #0f172a;
+    /* Error */
+    --error-50: oklch(96.9% 0.015 12.422);
+    --error-100: oklch(89.2% 0.058 10.001);
+    --error-200: oklch(71.2% 0.194 13.428);
+    --error-300: oklch(58.6% 0.253 17.585);
+    --error-400: oklch(45.5% 0.188 13.697);
+    --error-500: oklch(27.1% 0.105 12.094);
 
-    --size-50: 0.25rem; /*  4px */
-    --size-100: 0.5rem; /*  8px */
-    --size-200: 0.75rem; /* 12px */
-    --size-300: 1rem; /* 16px */
-    --size-400: 1.25rem; /* 20px */
-    --size-500: 1.5rem; /* 24px */
-    --size-600: 2rem; /* 32px */
+    /* Success */
+    --success-50: oklch(97.9% 0.021 166.113);
+    --success-100: oklch(90.5% 0.093 164.15);
+    --success-200: oklch(76.5% 0.177 163.223);
+    --success-300: oklch(59.6% 0.145 163.225);
+    --success-400: oklch(43.2% 0.095 166.913);
+    --success-500: oklch(26.2% 0.051 172.552);
 
-    --width-xs: 20rem; /* 320px  — mobile card / dialog */
-    --width-sm: 36rem; /* 576px  — narrow prose */
+    --size-2xs: 0.25rem; /*  4px */
+    --size-xs: 0.5rem; /*  8px */
+    --size-sm: 0.75rem; /* 12px */
+    --size-md: 1rem; /* 16px */
+    --size-lg: 1.25rem; /* 20px */
+    --size-xl: 1.5rem; /* 24px */
+    --size-2xl: 2rem; /* 32px */
+
+    --width-sm: 20rem; /* 320px  — mobile card / dialog */
     --width-md: 48rem; /* 768px  — default content column */
-    --width-lg: 64rem; /* 1024px — wide layout */
-    --width-xl: 80rem; /* 1280px — max site width */
+    --width-lg: 80rem; /* 1280px — max site width */
 
     /* Breakpoints (reference only — not usable in var()) */
     /* sm:  576px  */
@@ -42,10 +46,10 @@
     /* xl:  1280px */
 
     /* Semantic Mapping */
-    --bg-app: var(--slate-50);
-    --text-main: var(--slate-600);
-    --text-heading: var(--ice-600);
-    --text-dim: var(--slate-400);
-    --border-ui: var(--slate-100);
-    --primary: var(--ice-500);
+    --bg-app: var(--ice-50);
+    --text-main: var(--ice-500);
+    --text-heading: var(--ice-400);
+    --text-dim: var(--ice-300);
+    --border-ui: var(--ice-200);
+    --primary: var(--ice-400);
 }
