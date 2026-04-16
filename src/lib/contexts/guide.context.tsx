@@ -15,7 +15,18 @@ const GuideContext = createContext<GuideContextType>();
 
 export function GuideProvider(props: ParentProps) {
   const [guideStore, setGuideStore] = createStore<GuideStore>({
-    allGuides: [],
+    allGuides: [
+      {
+        id: "temp-1",
+        title: "Temp Guide",
+        description: "A temporary guide",
+        snapshots: [],
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+        version: 1,
+        isDeleted: false,
+      },
+    ],
   });
 
   return (
