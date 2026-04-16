@@ -15,6 +15,7 @@ export const fileSchema = z.object({
   fileName: z.string(),
   fileMimeType: z.string(),
   fileSize: z.number().nonnegative(),
+  guideId: z.uuidv4(),
 });
 
 export const snapshotSchema = z.object({
@@ -26,6 +27,7 @@ export const snapshotSchema = z.object({
     .max(64, "Title must be at most 64 characters long"),
   file: fileSchema,
   steps: z.array(stepSchema),
+  guideId: z.uuidv4(),
 });
 
 export const guideSchema = z.object({
