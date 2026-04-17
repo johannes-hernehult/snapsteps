@@ -48,7 +48,10 @@ export const guideSchema = z.object({
   isDeleted: z.boolean().default(false),
 });
 
-export type Guide = z.infer<typeof guideSchema>;
-export type Snapshot = z.infer<typeof snapshotSchema>;
-export type File = z.infer<typeof fileSchema>;
-export type Step = z.infer<typeof stepSchema>;
+export type GuideType = z.infer<typeof guideSchema>;
+export type SnapshotType = z.infer<typeof snapshotSchema>;
+export type SnapshotDraftType = Omit<SnapshotType, "file"> & {
+  file: FileType | undefined;
+};
+export type FileType = z.infer<typeof fileSchema>;
+export type StepType = z.infer<typeof stepSchema>;
