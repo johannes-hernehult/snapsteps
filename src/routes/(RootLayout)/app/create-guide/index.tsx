@@ -1,9 +1,9 @@
 import { Title } from "@solidjs/meta";
 import { useNavigate } from "@solidjs/router";
-import { createSignal, For } from "solid-js";
-import { Snapshot } from "~/components/create-guide-form/Snapshot";
+import { For } from "solid-js";
+import FileDropzone from "~/components/create-guide-form/FileDropzone";
+import Snapshot from "~/components/create-guide-form/Snapshot";
 import useCreateGuide from "~/lib/hooks/useCreateGuide";
-import { SnapshotDraftType, SnapshotType } from "~/lib/schemas/guide.schema";
 
 export default function CreateGuide() {
   const navigate = useNavigate();
@@ -14,7 +14,8 @@ export default function CreateGuide() {
     setGuideTitle,
     setGuideDescription,
     snapshots,
-    setSnapshots,
+    snapshotFiles,
+    handleFileDrop,
     handleCreateGuide,
   } = useCreateGuide();
 
@@ -36,9 +37,16 @@ export default function CreateGuide() {
           onChange={(e) => setGuideDescription(e.target.value)}
         />
 
+        <FileDropzone onFiles={handleFileDrop} />
+
         <For each={snapshots()}>
           {(snapshot) => (
-            <Snapshot snapshot={snapshot} setSnapshots={setSnapshots} />
+            <Snapshot
+              snapshot={snapshot}
+              snapshotFile={() =>
+                snapshotFiles().find((f) => f.snapshotId === snapshot.id)
+              }
+            />
           )}
         </For>
 
