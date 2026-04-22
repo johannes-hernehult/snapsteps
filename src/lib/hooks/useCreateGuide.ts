@@ -1,20 +1,18 @@
 import { batch, createSignal } from "solid-js";
-import { FileType, SnapshotType } from "../schemas/guide.schema";
+import {
+  fileSchema,
+  FileType,
+  guideSchema,
+  snapshotSchema,
+  SnapshotType,
+} from "../schemas/guide.schema";
 import { compressImage } from "../helpers/image.helpers";
 
 export default function useCreateGuide() {
   const [guideId] = createSignal(crypto.randomUUID());
   const [guideTitle, setGuideTitle] = createSignal("");
   const [guideDescription, setGuideDescription] = createSignal("");
-  const [snapshots, setSnapshots] = createSignal<SnapshotType[]>([
-    {
-      id: crypto.randomUUID(),
-      title: "",
-      steps: [],
-      guideId: guideId(),
-      order: 0,
-    },
-  ]);
+  const [snapshots, setSnapshots] = createSignal<SnapshotType[]>([]);
   const [snapshotFiles, setSnapshotFiles] = createSignal<FileType[]>([]);
 
   async function handleFileDrop(files: File[]) {
@@ -60,14 +58,43 @@ export default function useCreateGuide() {
   function handleCreateGuide(e: Event) {
     e.preventDefault();
 
-    console.log(guideId());
-    console.log(guideTitle());
-    console.log(guideDescription());
+    const guide = {
+      id: guideId(),
+      title: guideTitle(),
+      description: guideDescription(),
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      version: 1,
+      isDeleted: false,
+    };
 
-    console.log(snapshots());
-    console.log(snapshotFiles());
+    //Vaidate guide, snapshots and snapshotFiles
 
-    //ZOD validation
+    const validatedGuide = guideSchema.safeParse(guide);
+    const validatedSnapshots = snapshots().map((snapshot) =>
+      snapshotSchema.safeParse(snapshot),
+    );
+    const validatedSnapshotFiles = snapshotFiles().map((file) =>
+      fileSchema.safeParse(file),
+    );
+
+    if (!validatedGuide.success) {
+      console.log(validatedGuide.error);
+      return;
+    }
+
+    if (validatedSnapshots.some((snapshot) => !snapshot.success)) {
+      console.log(
+        validatedSnapshots.find((snapshot) => !snapshot.success)?.error,
+      );
+      return;
+    }
+
+    if (validatedSnapshotFiles.some((file) => !file.success)) {
+      console.log(validatedSnapshotFiles.find((file) => !file.success)?.error);
+      return;
+    }
+
     //Add guide to database
     //
 
