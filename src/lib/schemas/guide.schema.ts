@@ -16,6 +16,7 @@ export const fileSchema = z.object({
   fileMimeType: z.string(),
   fileSize: z.number().nonnegative(),
   guideId: z.uuidv4(),
+  snapshotId: z.uuidv4(),
 });
 
 export const snapshotSchema = z.object({
@@ -25,9 +26,9 @@ export const snapshotSchema = z.object({
     .trim()
     .min(1, "Title must be at least 1 character long")
     .max(64, "Title must be at most 64 characters long"),
-  file: fileSchema,
   steps: z.array(stepSchema),
   guideId: z.uuidv4(),
+  order: z.number().int().nonnegative(),
 });
 
 export const guideSchema = z.object({
@@ -41,7 +42,6 @@ export const guideSchema = z.object({
     .string()
     .min(1, "Description must be at least 1 character long")
     .max(256, "Description must be at most 256 characters long"),
-  snapshots: z.array(snapshotSchema).min(1, "Must have at least 1 snapshot"),
   createdAt: z.iso.datetime(),
   updatedAt: z.iso.datetime(),
   version: z.number().int().positive().default(1),
@@ -50,8 +50,5 @@ export const guideSchema = z.object({
 
 export type GuideType = z.infer<typeof guideSchema>;
 export type SnapshotType = z.infer<typeof snapshotSchema>;
-export type SnapshotDraftType = Omit<SnapshotType, "file"> & {
-  file: FileType | undefined;
-};
 export type FileType = z.infer<typeof fileSchema>;
 export type StepType = z.infer<typeof stepSchema>;
