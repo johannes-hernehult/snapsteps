@@ -20,7 +20,6 @@ export const guideSchema = z.object({
 export const snapshotSchema = z.object({
   id: z.uuidv4(),
   guideId: z.uuidv4(),
-  fileId: z.uuidv4(),
   text: z
     .string()
     .trim()
@@ -42,6 +41,7 @@ export const stepSchema = z.object({
 
 export const fileSchema = z.object({
   id: z.uuidv4(),
+  snapshotId: z.uuidv4(),
   fileName: z.string(),
   fileMimeType: z.string(),
   fileSize: z.number().nonnegative(),
