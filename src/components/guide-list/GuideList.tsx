@@ -1,6 +1,6 @@
 import { A } from "@solidjs/router";
 import { For } from "solid-js";
-import { useGuideStore } from "~/lib/contexts/guide.context";
+import { useGuideStore } from "~/lib/contexts/guideList.context";
 
 export default function GuideList() {
   const { guideStore, setGuideStore } = useGuideStore();

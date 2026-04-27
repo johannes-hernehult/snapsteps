@@ -1,5 +1,5 @@
 import { RouteSectionProps } from "@solidjs/router";
-import { GuideProvider } from "~/lib/contexts/guide.context";
+import { GuideProvider } from "~/lib/contexts/guideList.context";
 
 export default function Layout(props: RouteSectionProps) {
   return (
