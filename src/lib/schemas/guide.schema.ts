@@ -20,7 +20,7 @@ export const guideSchema = z.object({
 export const snapshotSchema = z.object({
   id: z.uuidv4(),
   guideId: z.uuidv4(),
-  text: z
+  title: z
     .string()
     .trim()
     .min(1, "Step text must be at least 1 character long")
