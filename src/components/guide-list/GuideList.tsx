@@ -3,10 +3,10 @@ import { For } from "solid-js";
 import { useGuideStore } from "~/lib/contexts/guideList.context";
 
 export default function GuideList() {
-  const { guideStore, setGuideStore } = useGuideStore();
+  const { guideList, setGuideList } = useGuideStore();
 
   return (
-    <For each={guideStore.allGuides}>
+    <For each={guideList}>
       {(guide) => <A href={`/app/guide/${guide.id}`}>{guide.title}</A>}
     </For>
   );
