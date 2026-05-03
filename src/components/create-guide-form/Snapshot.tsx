@@ -37,7 +37,11 @@ export default function Snapshot(props: {
       </label>
       <img src={objectUrl()} alt={props.snapshot.title} />
 
-      <button type="button" onClick={() => addStep(props.snapshot.id)}>
+      <button
+        class="add-button"
+        type="button"
+        onClick={() => addStep(props.snapshot.id)}
+      >
         Add Step
       </button>
 

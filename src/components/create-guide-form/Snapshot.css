@@ -9,18 +9,14 @@
 
     background-color: var(--ice-50);
 
+    label {
+        color: var(--ice-500) !important;
+    }
+
     img {
         max-height: var(--width-sm);
         object-fit: contain;
         background-color: #00000015;
         border-radius: var(--size-2xs);
-    }
-
-    .delete-button {
-        color: var(--error-200);
-
-        &:hover {
-            color: var(--error-300);
-        }
     }
 }

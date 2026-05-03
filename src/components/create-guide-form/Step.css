@@ -13,4 +13,8 @@
         color: var(--ice-400);
         font-weight: bold;
     }
+
+    button {
+        font-weight: bold;
+    }
 }

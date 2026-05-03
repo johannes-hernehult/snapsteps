@@ -9,5 +9,7 @@ form.create-guide-form {
         display: flex;
         flex-direction: column;
         gap: var(--size-2xs);
+        color: var(--ice-50);
+        font-weight: bold;
     }
 }

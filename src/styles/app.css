@@ -1,6 +1,6 @@
 body {
-    color: var(--ice-500);
-    background-color: var(--ice-100);
+    color: var(--ice-50);
+    background-color: var(--ice-300);
     font-size: var(--size-md);
     line-height: 1.6;
 }
@@ -51,9 +51,34 @@ p {
 input,
 textarea,
 select {
+    background-color: var(--ice-50);
     box-shadow: inset 1px 1px var(--size-2xs) #22222240;
     border-radius: var(--size-2xs);
     resize: none;
     padding: var(--size-2xs) var(--size-xs);
     line-height: 1.5;
+}
+
+.delete-button {
+    padding: var(--size-2xs) var(--size-sm);
+    border-radius: var(--size-2xs);
+
+    color: var(--error-300);
+
+    &:hover {
+        color: var(--error-400);
+        text-decoration: underline;
+    }
+}
+
+.add-button {
+    padding: var(--size-2xs) var(--size-sm);
+    border-radius: var(--size-2xs);
+
+    background-color: var(--success-300);
+    color: var(--success-50);
+
+    &:hover {
+        background-color: var(--success-400);
+    }
 }

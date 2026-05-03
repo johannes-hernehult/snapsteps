@@ -21,7 +21,7 @@ export default function Step(props: { step: StepType; index: number }) {
         type="button"
         onClick={() => deleteStep(props.step.id)}
       >
-        Delete
+        X
       </button>
     </div>
   );
