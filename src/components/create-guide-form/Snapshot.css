@@ -1,0 +1,18 @@
+.snapshot {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-md);
+
+    border: 2px solid var(--border-ui);
+
+    padding: var(--size-xs);
+
+    border-radius: var(--size-xs);
+
+    img {
+        max-height: var(--width-sm);
+        object-fit: contain;
+        background-color: #00000015;
+        border-radius: var(--size-2xs);
+    }
+}

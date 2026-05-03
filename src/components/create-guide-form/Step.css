@@ -1,0 +1,15 @@
+.step {
+    display: flex;
+    gap: var(--size-md);
+    align-items: center;
+
+    input {
+        flex-grow: 1;
+    }
+
+    h2 {
+        margin: 0;
+        line-height: 1;
+        font-weight: normal;
+    }
+}

@@ -1,0 +1,13 @@
+form.create-guide-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-xs);
+    max-width: var(--width-md);
+    margin: 0 auto;
+
+    label {
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-2xs);
+    }
+}
