@@ -35,9 +35,9 @@
     --size-xl: 1.5rem; /* 24px */
     --size-2xl: 2rem; /* 32px */
 
-    --width-sm: 20rem; /* 320px  — mobile card / dialog */
-    --width-md: 48rem; /* 768px  — default content column */
-    --width-lg: 80rem; /* 1280px — max site width */
+    --width-sm: 25rem; /* 400px */
+    --width-md: 32rem; /* 512px */
+    --width-lg: 56rem; /* 896px */
 
     /* Breakpoints (reference only — not usable in var()) */
     /* sm:  576px  */
@@ -50,6 +50,6 @@
     --text-main: var(--ice-500);
     --text-heading: var(--ice-400);
     --text-dim: var(--ice-300);
-    --border-ui: var(--ice-200);
+    --border-ui: var(--ice-300);
     --primary: var(--ice-400);
 }

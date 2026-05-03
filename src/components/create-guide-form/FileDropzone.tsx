@@ -56,12 +56,12 @@ export default function FileDropzone(props: {
             "pointer-events": "none",
           }}
         >
-          <p>Drop your files here!</p>
+          <p>Drop your images here!</p>
         </div>
       </Show>
       <label for="file-upload" style={{ display: "block", cursor: "pointer" }}>
         <div class="dropzone-visual">
-          <p>Click or drag to upload files</p>
+          <p>Click or drag to upload images</p>
         </div>
         <input
           id="file-upload"

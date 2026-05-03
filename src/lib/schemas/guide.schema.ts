@@ -17,6 +17,16 @@ export const guideSchema = z.object({
   updatedAt: z.iso.datetime(),
 });
 
+export const stepSchema = z.object({
+  id: z.uuidv4(),
+  title: z
+    .string()
+    .trim()
+    .min(1, "Title must be at least 1 character long")
+    .max(64, "Title must be at most 64 characters long"),
+  order: z.number().int().nonnegative(),
+});
+
 export const snapshotSchema = z.object({
   id: z.uuidv4(),
   guideId: z.uuidv4(),
@@ -26,17 +36,7 @@ export const snapshotSchema = z.object({
     .min(1, "Step text must be at least 1 character long")
     .max(64, "Step text must be at most 64 characters long"),
   order: z.number().int().nonnegative(),
-});
-
-export const stepSchema = z.object({
-  id: z.uuidv4(),
-  snapshotId: z.uuidv4(),
-  title: z
-    .string()
-    .trim()
-    .min(1, "Title must be at least 1 character long")
-    .max(64, "Title must be at most 64 characters long"),
-  order: z.number().int().nonnegative(),
+  steps: z.array(stepSchema),
 });
 
 export const fileSchema = z.object({

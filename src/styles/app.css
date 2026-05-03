@@ -2,8 +2,18 @@ body {
     color: var(--text-main);
     background-color: var(--bg-app);
     font-size: var(--size-md);
-    padding: var(--size-md);
     line-height: 1.6;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-md);
+    padding: var(--size-md);
+}
+
+footer {
+    margin-top: auto;
 }
 
 h1,
@@ -36,4 +46,14 @@ h4 {
 p {
     max-width: var(--width-md);
     margin: var(--size-md) 0;
+}
+
+input,
+textarea,
+select {
+    box-shadow: inset 1px 1px var(--size-2xs) #22222280;
+    border-radius: var(--size-2xs);
+    resize: none;
+    padding: var(--size-2xs) var(--size-xs);
+    line-height: 1.5;
 }

@@ -22,6 +22,10 @@
 }
 
 body {
+    padding: 0;
+}
+
+#app {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
 }
@@ -45,6 +49,7 @@ button,
 textarea,
 select {
     font: inherit;
+    border: none;
 }
 
 button {
