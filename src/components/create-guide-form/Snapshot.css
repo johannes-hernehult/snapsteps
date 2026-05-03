@@ -3,16 +3,24 @@
     flex-direction: column;
     gap: var(--size-md);
 
-    border: 2px solid var(--border-ui);
-
-    padding: var(--size-xs);
-
+    padding: var(--size-md);
     border-radius: var(--size-xs);
+    box-shadow: 1px 1px var(--size-2xs) #22222240;
+
+    background-color: var(--ice-50);
 
     img {
         max-height: var(--width-sm);
         object-fit: contain;
         background-color: #00000015;
         border-radius: var(--size-2xs);
+    }
+
+    .delete-button {
+        color: var(--error-200);
+
+        &:hover {
+            color: var(--error-300);
+        }
     }
 }

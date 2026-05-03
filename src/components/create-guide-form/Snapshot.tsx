@@ -45,7 +45,11 @@ export default function Snapshot(props: {
         {(item, i) => <Step step={item} index={i()} />}
       </For>
 
-      <button type="button" onClick={() => deleteSnapshot(props.snapshot.id)}>
+      <button
+        class="delete-button"
+        type="button"
+        onClick={() => deleteSnapshot(props.snapshot.id)}
+      >
         Delete Snapshot
       </button>
     </div>

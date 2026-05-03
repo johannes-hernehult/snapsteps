@@ -7,7 +7,7 @@ export default function Step(props: { step: StepType; index: number }) {
 
   return (
     <div class="step">
-      <h2>{props.index + 1}</h2>
+      <span>{props.index + 1}</span>
       <input
         type="text"
         id={`title-${props.index}`}
@@ -16,7 +16,11 @@ export default function Step(props: { step: StepType; index: number }) {
           updateTitle(props.step.id, e.currentTarget.value, "step")
         }
       />
-      <button type="button" onClick={() => deleteStep(props.step.id)}>
+      <button
+        class="delete-button"
+        type="button"
+        onClick={() => deleteStep(props.step.id)}
+      >
         Delete
       </button>
     </div>

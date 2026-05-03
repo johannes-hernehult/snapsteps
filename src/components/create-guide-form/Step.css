@@ -7,9 +7,10 @@
         flex-grow: 1;
     }
 
-    h2 {
+    span {
         margin: 0;
         line-height: 1;
-        font-weight: normal;
+        color: var(--ice-400);
+        font-weight: bold;
     }
 }

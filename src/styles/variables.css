@@ -44,12 +44,4 @@
     /* md:  768px  */
     /* lg:  1024px */
     /* xl:  1280px */
-
-    /* Semantic Mapping */
-    --bg-app: var(--ice-50);
-    --text-main: var(--ice-500);
-    --text-heading: var(--ice-400);
-    --text-dim: var(--ice-300);
-    --border-ui: var(--ice-300);
-    --primary: var(--ice-400);
 }
